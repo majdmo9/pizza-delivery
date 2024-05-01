@@ -1,9 +1,9 @@
-import Navbar from "../components/Navbar";
+import Navbar from "../components/lib/Navbar";
 import "./globals.css";
 import type { Metadata } from "next";
-import { Noto_Sans } from "next/font/google";
+import { Poppins } from "next/font/google";
 
-const notoSans = Noto_Sans({ subsets: ["latin"], weight: ["100", "300", "400", "500", "700", "900"] });
+const notoSans = Poppins({ subsets: ["latin"], weight: ["100", "300", "400", "500", "700", "900"] });
 
 export const metadata: Metadata = {
   title: "Pizza Delivery",
@@ -13,7 +13,10 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body className={notoSans.className}>{children}</body>
+      <body className={notoSans.className}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
