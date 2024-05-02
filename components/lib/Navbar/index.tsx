@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
 import { useMediaQuery, useTheme } from "@mui/material";
 import { motion } from "framer-motion";
+import CloseIcon from "@pizza/components/icons/CloseIcon";
 
 const Navbar = () => {
   const theme = useTheme();
@@ -47,7 +48,7 @@ const Navbar = () => {
             aria-controls="navbar-default"
             aria-expanded="false"
           >
-            <MenuIcon className="h-6 w-6" />
+            <CloseIcon className="h-6 w-6" />
             <span className="sr-only">Toggle navigation</span>
           </button>
         ) : (
